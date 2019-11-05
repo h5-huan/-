@@ -1,0 +1,58 @@
+<import src="/pages/template/index" />
+
+<view class='contain'>
+    <view class='introbgc'>
+  <image src='/images/bgc.png' mode="aspectFill"></image>
+  <text class='tit'>舞磷高手争霸赛等你来参加</text>
+</view>
+<view class='fabubox'>
+    <view class='fabu'>
+        <view class='tit'>描述</view>
+        <textarea bindinput="textinput" maxlength='200' placeholder="请输入本次的示范描述，不超过200字"></textarea>
+        <view class='tit'>
+          <!-- <text class='active'>图片上传</text>
+          <text>视频上传</text> -->
+           <text wx:for="{{order}}" class="{{item.id == order_index ? 'active' : ''}}" wx:key="index" bindtap='orderTab' data-index='{{item.id}}'>{{item.state}}</text>
+          <view class='num' wx:if="{{order_index==0}}"><text>0</text>/9</view>
+        </view>
+         <view class='imgs'>
+      <view class='item' wx:if="{{avatarUrl && order_index==0}}" wx:for="{{avatarUrl}}"  wx:key="index">
+           <image src='/images/del.png' class='del' data-index='{{index}}' bindtap='binddel'></image>
+           <image mode='aspectFill' src='/img/upload.png' class='img' data-index='{{index}}' src='{{item}}' bindtap="previewImage"></image>
+           
+      </view>
+      <view class='item' bindtap="addImage" wx:if="{{!video || order_index==0}}">
+           <image src='/images/addimgicon.png' class='addicon' mode='aspectFit'></image>
+      </view>
+      <view class="video-box" wx:if="{{video && order_index==1}}">
+        <video class="video" src="{{video}}"></video>
+      </view>
+  </view>
+    </view>
+    <view class='btn' bindtap='submit'>发布示范</view>
+</view>
+</view>
+<!-- 脚部 -->
+<view class="foot flex">
+    <view class='icon' bindtap='change' data-index='1'>
+      <image src="/images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='2'>
+      <image src="/images/order.png"></image>
+      <view>赛程介绍</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='3'>
+      <image src="/images/scan_press.png"></image>
+      <view></view>
+    </view>
+    <view class='icon' bindtap='change' data-index='4'>
+      <image src="/images/message.png"></image>
+      <view>高手展示</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='5'>
+      <image src="/images/me.png"></image>
+      <view>个人中心</view>
+    </view>
+  </view>
+

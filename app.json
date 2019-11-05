@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index6/index6",
+    
+    "pages/register/register",
+    "pages/index5/index5",
+    "pages/index3/index3",
+    
+    
+    
+    "pages/masterdetail/masterdetail",
+    "pages/searchshop/searchshop",
+    "pages/index4/index4",
+    "pages/index2/index2",
+    "pages/welcome/index",
+    "pages/company/company"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "荷兰易普润",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

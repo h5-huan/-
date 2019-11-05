@@ -1,0 +1,92 @@
+<import src="/pages/template/index" />
+
+<view class='contain'>
+   <swiper indicator-dots autoplay circular indicator-active-color="#fff" interval="4000" class='slideside' style="height:{{Height}}">
+       <swiper-item wx:for="{{adv}}" data-id="{{item.id}}" data-link="{{item.tuimg}}" wx:key="index" bindtap="linkadvs">
+         <image src="{{advimgurl}}{{item.tuimg}}" mode='widthFix' bindload="imageLoad"/>
+       </swiper-item>
+     </swiper>
+    <view class='top'>
+      <view class='sousuo'>
+           <!-- <text>搜索店铺</text> -->
+           <view class='inputbox'>
+               <input placeholder='请输入注册号搜索' value='{{inputcontent}}' bindinput='sousuoinput'></input>
+           </view>
+           <image src='/images/search.png' bindtap="ssbtn"></image>
+      </view>
+
+    </view>
+    <template is="slidetab" data="{{timejuli,sqshow,cpshow,sqdata,cpdata}}" />
+    <view class='page1'>
+          <template is="list" data="{{indexdata,imgurl}}" />
+          <!-- 参加比赛按钮 -->
+          <view wx:if="{{publishbtn}}" class='addbs' bindtap="takepart">我也要参加比赛</view>
+    </view>
+     <view wx:if="{{indexdata==[] || indexdata==''}}" class='shopnone'>
+      还没有数据~
+    </view>
+    <view class='typebox' bindtap='opentype' wx:if="{{indexscrren==false}}">
+      <image src='/images/typeicon.png'></image>
+    </view>
+    <view wx:if="{{indexscrren}}">
+      <template is="indexscrren"/>
+    </view>
+
+</view>
+<!-- 脚部 -->
+<view class="foot flex">
+    <view class='icon' bindtap='change' data-index='1'>
+      <image src="/images/home_press.png"></image>
+      <view class="on">首页</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='2'>
+      <image src="/images/order.png"></image>
+      <view>赛程介绍</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='3'>
+      <image src="/images/scan_press.png"></image>
+      <view></view>
+    </view>
+    <view class='icon' bindtap='change' data-index='4'>
+      <image src="/images/message.png"></image>
+      <view>高手展示</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='5'>
+      <image src="/images/me.png"></image>
+      <view>个人中心</view>
+    </view>
+  </view>
+  <!-- 用户注册完资料审核弹窗 -->
+<view class='shscreen' bindtap="closesh" wx:if="{{shscreen}}">
+  <view class='shbox'>
+     <image src="/images/shenhe.jpg"></image>
+     <text class='test'>资料正在审核中</text>
+     <view class='btnbox'>
+        <text class='btn1' catchtap='changedovument'>修改资料</text>
+        <!-- <text class='btn2'>参赛作品</text> -->
+     </view>
+  </view>
+</view>
+
+<!-- 分享方式 -->
+<template is="share"  wx:if="{{sharescrren}}"/>
+
+<!-- 生成分享图片 -->
+<template is="loadimg" data="{{ewmimg}}"  wx:if="{{ewmimgshow}}"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

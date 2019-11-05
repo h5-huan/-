@@ -1,0 +1,124 @@
+/* pages/rule/index.wxss */
+@import "/utils/wxParse/wxParse.wxss";
+page{
+  background: #fff;
+}
+.main{
+  width: 94%;
+  padding: 0 3%;
+
+  }
+.main .title{
+  width: 100%;
+  height: 105rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.main .title .line{
+  display: block;
+  width:5rpx;
+  height: 30rpx;
+  background:#249345;
+}
+.main .title .tit{
+  font-size: 30rpx;
+  color:#272727;
+  margin-left: 20rpx;
+}
+.main image{
+  width: 100%;
+}
+.main .text{
+  width: 100%;
+  line-height: 44rpx;
+  font-size: 26rpx;
+  color:#626262;
+  margin-bottom: 30rpx;
+}
+.typebox{
+  width: 91rpx;
+  height: 91rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom:66rpx;
+  right:3%;
+}
+.typebox image{
+  width: 46rpx;
+  height: 46rpx;
+}
+/* 弹窗 */
+.coverscrren{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  position: fixed;
+  top:0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.coverscrren .typeall{
+  width: 91rpx;
+  overflow: hidden;
+  position:fixed;
+  bottom: 66rpx;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  z-index: 101;
+}
+.coverscrren .typeall view{
+  width: 91rpx;
+  height: 91rpx;
+  border-radius: 50%;
+  margin-bottom:15rpx;
+  font-size: 19rpx;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.coverscrren .typeall view text{
+  padding: 10rpx;
+}
+.coverscrren .typeall .tyicon1{
+  background: #4DD7B8;
+}
+.coverscrren .typeall .tyicon2{
+  background: #68BD72;
+}
+.coverscrren .typeall .tyicon3{
+  background: #007A33;
+}
+.coverscrren .typeall .tyicon3 text{
+  font-size: 50rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

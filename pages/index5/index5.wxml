@@ -1,0 +1,40 @@
+<import src="/pages/template/index" />
+<view class='contain'>
+    <template is="personal" data="{{userInfo,personCount,imgurl}}" />
+    <view class='minelist'>
+      <view wx:if="listdata==''">
+          <view class='nodt'>您还没有发布任何动态</view>
+      </view>
+      <view wx:if="listdata!=''">
+        <template is="puttrends" data="{{listdata,imgurl}}" />
+      </view>
+      
+    </view>
+</view>
+<!-- 脚部 -->
+<view class="foot flex">
+    <view class='icon' bindtap='change' data-index='1'>
+      <image src="/images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='2'>
+      <image src="/images/order.png"></image>
+      <view>赛程介绍</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='3'>
+      <image src="/images/scan_press.png"></image>
+      <view></view>
+    </view>
+    <view class='icon' bindtap='change' data-index='4'>
+      <image src="/images/message.png"></image>
+      <view>高手展示</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='5'>
+      <image src="/images/me_press.png"></image>
+      <view class='on'>个人中心</view>
+    </view>
+  </view>
+ <!-- 分享方式 -->
+<template is="share"  wx:if="{{sharescrren}}"/>
+<!-- 生成分享图片 -->
+<template is="loadimg" data="{{ewmimg}}"  wx:if="{{ewmimgshow}}"/>

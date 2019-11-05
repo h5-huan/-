@@ -1,0 +1,50 @@
+<import src="/pages/template/index" />
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class='contain'>
+    <view class='introbgc'>
+      <image src='/images/bgc.png' mode="aspectFill"></image>
+      <text class='tit'>舞磷高手争霸赛</text>
+    </view>
+    <view class='introbox'>
+        <view class='bt'>
+          <text class='line'></text>
+          <text class='text'>舞磷高手活动参与要求</text>
+        </view>
+        <view class='itrotest'>
+        <!-- {{scjs}} -->
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </view>
+        <!-- <view class='bt'>
+          <text class='line'></text>
+          <text class='text'>活动报名通道</text>
+        </view>
+        <view class='ewmimg'>
+          <image src='/images/ewm.jpg' mode="aspectFill"></image>
+        </view>
+        <view class='introend'>活动时间：2018年5月-2018年12月</view>
+        <view class='introend'>活动范围：全国</view> -->
+    </view>
+</view>
+<!-- 脚部 -->
+<view class="foot flex" style="overflow: visible;">
+    <view class='icon' bindtap='change' data-index='1'>
+      <image src="/images/home.png"></image>
+      <view>首页</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='2'>
+      <image src="/images/order_press.png"></image>
+      <view class="on">赛程介绍</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='3'>
+      <image src="/images/scan_press.png"></image>
+      <view></view>
+    </view>
+    <view class='icon' bindtap='change' data-index='4'>
+      <image src="/images/message.png"></image>
+      <view>高手展示</view>
+    </view>
+    <view class='icon' bindtap='change' data-index='5'>
+      <image src="/images/me.png"></image>
+      <view>个人中心</view>
+    </view>
+  </view>

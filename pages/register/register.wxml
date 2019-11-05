@@ -1,0 +1,64 @@
+<view class='introbgc'>
+  <image src='/images/bgc.png' mode="aspectFill"></image>
+  <text class='tit'>注册成功即可参加舞磷高手争霸赛</text>
+</view>
+<view class='fabubox'>
+    <view class='fabu'>
+        <view class='tit'>姓名</view>
+        <view class='inputbox'>
+          <input placeholder='请输入姓名' value='{{name}}' class='small1' bindinput="bindname"></input>
+          <view class='sexbox'>
+            <view wx:for="{{sexarr}}" wx:key="index" bindtap="checksex" data-sex="{{item.sex}}">
+              <image src='{{item.img}}' mode="aspectFill"></image>
+              <text>{{item.sex}}</text>
+            </view>
+          </view>
+        </view>  
+        <view class='tit'>手机号</view>
+        <view class='inputbox'>
+          <input type='number' value='{{phone}}' placeholder='请输入手机号码' bindinput="bindphone"></input>
+        </view>
+        <view class='tit'>种植作物</view>
+        <view class='inputbox'>
+          <input placeholder='请输入' value='{{zuowu}}' bindinput="bindzuowu"></input>
+        </view>
+        <view class='tit'>种植面积</view>
+        <view class='inputbox'>
+          <input placeholder='请输入' value='{{mianji}}' bindinput="bindmianji"></input>
+        </view>
+        <view class='tit'>详细地址</view>
+        <view class='inputbox'>
+          <input placeholder='请输入' value='{{addr}}' bindinput="bindaddr"></input>
+        </view>
+        <view class='tit'>选择赛区</view>
+        <view class='inputbox'>
+        <picker class='saiqu' bindchange="sqPicker" value="{{sqindex}}" range="{{saiqu}}" range-key="s_saiqu">
+          <view class="picker" data-id="{{saiqu[sqindex].id}}">{{saiqu[sqindex].s_saiqu}}</view>
+        </picker>
+        <image src='/images/dizhi.png' class='chechicon' mode="aspectFill"></image>
+        </view>
+        <view class='tit'>选择产品</view>
+        <view class='cpbox'>
+           <text wx:for="{{chanpin}}" bindtap="checkcp" wx:key="index" data-id="{{item.id}}" class='{{item.active}}'>{{item.title}}</text>
+        </view>
+        <!-- <view class='inputbox'>
+          <picker class='saiqu' bindchange="cpPicker" value="{{cpindex}}" range="{{chanpin}}" range-key="title">
+            <view class="picker" data-id="{{chanpin[cpindex].id}}">{{chanpin[cpindex].title}}</view>
+          </picker>
+          <image src='/images/dizhi.png' class='chechicon' mode="aspectFill"></image>
+        </view> -->
+        <view class='tit'>推荐人</view>
+        <view class='inputbox'>
+          <input placeholder='可不填' value='{{tjr}}' bindinput="bindtjr"></input>
+        </view>
+    </view>
+    <view class='tl'>
+      <image src='{{control}}' mode='aspectFill' class='check' bindtap="bindcontrol"></image>
+      <text class='tt'>我已阅读并同意《注册协议》</text>
+    </view>
+    <form name='pushMsgFm' class='btn' report-submit='true' bindsubmit='orderSign'> 
+      <button form-type="submit">{{submittext}}</button>  
+    </form>
+    <!-- <view class='btn' bindtap='orderSign'>{{submittext}}</view> -->
+</view>
+

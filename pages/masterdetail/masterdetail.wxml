@@ -1,0 +1,136 @@
+<import src="/pages/template/index" />
+<view class='minebgc'>
+       <image src='/images/bgc.png' mode="aspectFill" class='bgc'></image>
+       <view class='psmsg flex'>
+         <image src='{{userInfo.weixin_touxiang}}' mode="aspectFill" class='head'></image>
+         <view class='psjj flex'>
+           <view class='psjjbox'>
+             <text class='name'>{{userInfo.id}}号{{userInfo.truename}}</text>
+             <view class='tt'>更新{{personCount}}条<text></text>共{{userInfo.toups}}票</view>
+             <view class='zw'>
+                <text>作物：{{userInfo.zuowu}}</text>
+                <text>产品：{{userInfo.chanpin}}</text>
+                <text>赛区：{{userInfo.saiqu}}</text>
+             </view>
+           </view>
+           <text class='toupiao' bindtap='toupiao'>投票</text>
+           <button class='share' open-type='share' dataset-uid="{{userInfo.id}}" id="1" type="default" plain='false'>
+             <text>转发</text>
+           </button>
+
+         </view>
+       </view>
+    </view>
+    <view class='minelist'>
+      <view wx:if="listdata==''">
+          <view class='nodt'>该用户还没有发布任何动态</view>
+      </view>
+      <view wx:if="listdata!=''">
+        <view class='pslist' wx:for="{{listdata}}" wx:key="index">
+          <!-- <view class='data'>
+              <text class='da1'>12</text>/<text class='da2'>3月</text>
+          </view> -->
+          <!-- <image src='/images/logo.png' mode="aspectFill" class='psimg'></image> -->
+          <view class='only'>
+            <view class='midata'>
+               <text class='time'>{{item.add_time}}</text>
+            </view>
+            <view class='review'>{{item.describe}}</view>
+            <!-- <view class='imgbox' wx:if="{{item.type==2 && item.dongimg.length==1}}">
+              <video catchtap='bindvideo' src="{{imgurl}}{{item.dongimg}}" controls objectFit="cover"></video>
+            </view> -->
+            <view class='imgbox' catchtap='bindvideo' data-id="{{item.id}}" wx:if="{{item.type==2 && item.dongimg.length==1}}">
+              <view class='videocover' wx:if="{{item.videotype==1}}">
+                <image class='area1' src='{{imgurl}}{{item.dong_cover}}' mode='aspectFill'></image>
+                <image class='icon' src='../../images/videoicon.png' mode='aspectFill'></image>
+              </view>
+              <video wx:if="{{item.videotype==2}}" id="myVideo_{{item.id}}" bindfullscreenchange= "bindscreen_video" data-id="{{item.id}}" src="{{imgurl}}{{item.dongimg}}" poster='https://vote.south-power.cn/Public/Uploads/2019-04-08/top.png' autoplay controls loop objectFit="cover"></video>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==1}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area1' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+             <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==2}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area2' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==3}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area3' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==4}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area4' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==5}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area5' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==6}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area6' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==7}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area7' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==8}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area8' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==9}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image bindtap="imgYu" data-src="{{index}}" data-srclist="{{item.dongimg}}" class='area9' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='editbox flex'>
+              <view class='lft'>
+                <view class='edit' data-uid="{{item.user_id}}" data-id="{{item.id}}" bindtap="bindpindlun">
+                  <image src='/images/edit01.png' class='edit01'></image>{{item.pinglunCount}}
+                </view>
+                <!-- <view class='edit' data-uid="{{item.user_id}}" data-dztype="{{item.isdianzan}}" data-id="{{item.id}}" catchtap='dianzan'>
+                  <image src='../../images/dz2.png' wx:if="{{item.isdianzan==1}}" class='edit02'></image>
+                  <image src='../../images/dz1.png' wx:if="{{item.isdianzan==2}}" class='edit02'></image>
+                  {{item.dongtaiCountList.dianzan}}
+                </view> -->
+                <!-- <button class='edit' data-uid="{{item.user_id}}" data-ids="{{item.id}}" open-type='share' id="2" type="default" plain='false'>
+                 <image src='/images/edit03.png' class='edit03'></image>{{item.dongtaiCountList.fenxiang}}
+               </button> -->
+               <view class='edit' data-uid="{{item.user_id}}" data-ids="{{item.id}}" catchtap='sharebtn'>
+                  <image src='/images/edit03.png' class='edit03'></image>{{item.dongtaiCountList.fenxiang}}
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- 评论 -->
+          <view class='plbox' wx:if="{{item.ispl}}">
+            <view class='inputbox'>
+              <input type='text' value='{{item.inputtext}}' data-uid="{{item.user_id}}" data-id="{{item.id}}" bindinput="plinput" placeholder='请输入留言信息'></input>
+            </view>
+            <text class='plbtn' data-uid="{{item.user_id}}" data-id="{{item.id}}" bindtap="sendmsg">发送</text>
+          </view>
+          <view wx:if="{{item.pinglunList!=''}}" class='comment'>
+            <view wx:for="{{item.pinglunList}}" wx:key="index">
+              <text class='co1'>{{item.user_name}}</text>
+              <text class='co2'>{{item.comment_content}}</text>
+              <text class='co3'>{{item.add_time}}</text>
+            </view>
+          </view>
+
+        </view>
+      </view>
+
+
+    </view>
+ <!-- 分享方式 -->
+<template is="share"  wx:if="{{sharescrren}}"/>
+<!-- 生成分享图片 -->
+<template is="loadimg" data="{{ewmimg}}"  wx:if="{{ewmimgshow}}"/>

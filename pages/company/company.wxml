@@ -1,0 +1,13 @@
+<import src="/pages/template/index" />
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class="main">
+    <view class='text'>
+    <template is="wxParse" data="{{wxParseData:msgs.nodes}}" />
+    </view>
+</view>
+<view class='typebox' bindtap='opentype' wx:if="{{comscrren==false}}">
+  <image src='/images/typeicon.png'></image>
+</view> 
+<view wx:if="{{comscrren}}"> 
+  <template is="comscrren"/>
+</view> 

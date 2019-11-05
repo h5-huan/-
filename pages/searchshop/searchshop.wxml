@@ -1,0 +1,23 @@
+<import src="/pages/template/index" />
+<view class="input">
+  <view class='sousuo'>
+      <image src='/images/search.png' class='dizhi'></image>
+      <view class='inputbox'>
+        <input placeholder="请输入要搜索的注册号" value='{{inputcontent}}' bindinput="sousuoinput"/>
+      </view>
+       <text bindtap="ssbtn">搜索</text> 
+  </view>
+  <!-- <view class='allcity'>
+      <view class='bindsousuo' wx:if="{{sscity!=null && sscity!=''}}" bindtap="checkcity" wx:for="{{sscity}}" data-areaid="{{item.areaid}}">{{item.areaname}}</view>
+  </view>
+   -->
+  
+</view>
+<!-- <view class='page1' wx:if="{{companylist!=[]}}">
+   <template is="list" data="{{indexdata,imgurl}}" />
+</view> -->
+<view class='page1'>
+   <template is="list" data="{{indexdata,imgurl}}" />
+</view>
+<view class='shopnone' wx:if="{{shopnone==true}}">没有您搜到的店铺~</view>
+

@@ -1,0 +1,23 @@
+<view class='top'>
+  <view class='logo'>
+      <image src='/images/logo.png' mode='aspectFill' class='time'></image>
+  </view>
+  <view class='info'>
+    <view class='title'>请确认授权以下信息</view>
+    <view class='desc'>获得你的公开信息（昵称、头像等）</view>
+  </view>
+</view>
+<button class='btn' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">确认授权</button>
+<!-- 没授权情况下 -->
+<view class='login_acreen' hidden='{{!login_show}}'></view>
+<view class='login_model' hidden='{{!login_show}}'>
+<view class='login_model_title'>温馨提醒</view>
+<view class='login_model_body'>
+<view>由于很多功能需要用户授权</view> 
+<view>才能正常使用，为了给您提供</view> 
+<view>更好的服务，只需一次授权！</view> 
+</view>
+<view class='login_model_btn'>
+<button class='btn_2' bindgetuserinfo='getUserInfo' open-type="getUserInfo" catchtap='close_model'>确定</button>
+</view>
+</view> 

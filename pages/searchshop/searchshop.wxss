@@ -1,0 +1,267 @@
+.input {
+  width:92%;
+  background: #fff;
+  height: 96rpx;
+  margin-bottom: 1px;
+  position: fixed;
+  top:0;
+  left:4%;
+  z-index: 100;
+  
+}
+.input .allcity{
+  position: absolute;
+  width: 86%;
+  padding: 0 7%;
+  background: #fff;
+  top:100rpx;
+  left: 0;
+}
+.input .bindsousuo{
+  width: 100%;
+  line-height: 80rpx;
+  color: #333333;
+  font-size: 24rpx;
+}
+.input .sousuo{
+  width: 92%;
+  height: 96rpx;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #fff;
+  
+}
+.input .sousuo image.dizhi{
+  width: 30rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}
+.input .sousuo .inputbox{
+  width:73%;
+  height: 64rpx;
+}
+.input .sousuo .inputbox input {
+  width:100%;
+  height: 64rpx;
+  border-radius: 40rpx;
+  font-size: small;
+  box-sizing: border-box;
+}
+.input .sousuo text{
+  display: inline-block;
+  padding: 0 30rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  border-radius: 24rpx;
+  background:#007a33;
+  color: #fff;
+  font-size: 28rpx;
+  position: absolute;
+  right:0;
+  top:24rpx;
+
+}
+/* .input .sousuo image.dingwei{
+  width: 35rpx;
+  height: 42rpx;
+  margin-top: 26rpx;
+  margin-left: 10rpx;
+} */
+.shopnone{
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #999999;
+  }
+
+
+
+.page1{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 100rpx;
+}
+.prolist{
+  width: 94%;
+  margin: 0 auto;
+  border-bottom: 1px solid #eeeeee;
+  padding: 18rpx 0;
+  display: flex;
+}
+.prolist image.head{
+  width: 95rpx;
+  height: 95rpx;
+  border-radius: 50%; 
+}
+.prolist .rit{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.prolist .rit .tit1{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 60rpx;
+}
+.prolist .rit .tit1 .name{
+  display: flex;
+  flex-wrap: wrap;
+}
+.prolist .rit .tit1 .name .te1{
+  color: #2a2c34;
+  font-size:26rpx;
+}
+.prolist .rit .tit1 .name .te2{
+  color: #7f7f7f;
+  font-size:22rpx;
+  margin-left:25rpx;
+}
+.prolist .rit .tit1 .name .te2 text{
+ color: #00792c;
+}
+.prolist .rit .tit1 .tp{
+  display: block;
+  width: 127rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  font-size:22rpx;
+  background: #f3911d;
+  border-radius: 25rpx;
+}
+.prolist .rit .tit2{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+.prolist .rit .tit2 image.icon1{
+  width: 24rpx;
+  height: 14rpx;
+  margin-right: 10rpx;
+}
+.prolist .rit .tit2 image.icon2{
+  width: 21rpx;
+  height: 21rpx;
+  margin-right: 10rpx;
+}
+.prolist .rit .tit2 text.date{
+  color: #989898;
+  font-size:20rpx;
+}
+.prolist .rit .tit2 text.border{
+  display: block;
+  width: 2px;
+  height: 20rpx;
+  background: #eeeeee;
+  margin: 0 15rpx;
+}
+.prolist .rit .tit3{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+.prolist .rit .tit3 view{
+  margin-right: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.prolist .rit .tit3 view .mz{
+  color: #a0a0a0;
+  font-size:23rpx;
+}
+.prolist .rit .tit3 view .mztext{
+  color: #3f3f3f;
+  font-size:23rpx;
+}
+.prolist .rit .tit4,.prolist .rit .tit5{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+.prolist .rit .tit4{
+ margin-bottom: 50rpx;
+}
+.prolist .rit .tit4 image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius:7rpx;
+  margin: 0 20rpx 20rpx 0;
+}
+.prolist .rit .tit5{
+  width: 100%;
+  height: 50rpx;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom:0;
+  left:0;
+  z-index: 5;
+}
+.prolist .rit .tit5 .edit{
+ font-size: 20rpx;
+  color:#555555;
+  margin:0 20rpx 0 10rpx; 
+  display: flex;
+  align-items: center;
+}
+.prolist .rit .tit5 button.edit{
+  border: none;
+}
+.prolist .rit .tit5 .edit image{
+  margin-right: 10rpx;
+}
+.prolist .rit .tit5 .edit image.edit01{
+  width:29rpx;
+  height: 28rpx;
+}
+.prolist .rit .tit5 .edit image.edit02{
+  width:30rpx;
+  height: 30rpx;
+}
+.prolist .rit .tit5 .edit image.edit03{
+  width:26rpx;
+  height: 26rpx;
+}
+.addbs{
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  height: 92rpx;
+  line-height: 92rpx;
+  text-align: center;
+  border-radius: 46rpx;
+  background: #f5b449;
+  color: #fff;
+  font-size: 28rpx;
+  position: fixed;
+  bottom: 144rpx;
+  left:5%;
+}
+.shopnone{
+  width: 100%;
+  margin: 50rpx 0;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #999999;
+}
+

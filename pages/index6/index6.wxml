@@ -1,0 +1,127 @@
+<import src="/pages/template/index" />
+<view class='contain'>
+    <!-- <template is="personal" data="{{userInfo,personCount,imgurl}}" /> -->
+    <view class='minebgc'>
+       <image src='/images/bgc.png' mode="aspectFill" class='bgc'></image>
+       <view class='psmsg flex'>
+         <image src='{{userInfo.weixin_touxiang}}' mode="aspectFill" class='head'></image>
+         <view class='psjj flex'>
+           <view class='psjjbox'>
+             <text class='name'>{{userInfo.id}}号{{userInfo.truename}}</text>
+             <view class='tt'>更新{{personCount}}条<text></text>共{{userInfo.toups}}票</view>
+             <view class='zw'>
+                <text>作物：{{userInfo.zuowu}}</text>
+                <text>产品：{{userInfo.chanpin}}</text>
+                <text>赛区：{{userInfo.saiqu}}</text>
+             </view>
+           </view>
+           <text class='toupiao' bindtap='toupiao'>投票</text>
+           <button class='share' open-type='share' dataset-uid="{{item.user_id}}"dataset-ids="{{item.id}}" id="1" type="default" plain='false'>
+           <text>邀请好友</text>
+           </button>
+         </view>
+       </view>
+    </view>
+    <view class='minelist'>
+      <view wx:if="listdata==''">
+          <view class='nodt'>您还没有发布任何动态</view>
+      </view>
+      <view wx:if="listdata!=''">
+         <view class='pslist' wx:for="{{listdata}}" wx:key="index">
+          <view class='only'>
+            <view class='midata'>
+               <text class='time'>{{item.add_time}}</text>
+            </view>
+            <view class='review'>{{item.describe}}</view>
+            <view class='imgbox' catchtap='bindvideo' data-id="{{item.id}}" wx:if="{{item.type==2 && item.dongimg.length==1}}">
+              <view class='videocover' wx:if="{{item.videotype==1}}">
+                <image class='area1' src='{{imgurl}}{{item.dong_cover}}' mode='aspectFill'></image>
+                <image class='icon' src='../../images/videoicon.png' mode='aspectFill'></image>
+              </view>
+              <video wx:if="{{item.videotype==2}}" id="myVideo_{{item.id}}" bindfullscreenchange= "bindscreen_video" data-id="{{item.id}}" src="{{imgurl}}{{item.dongimg}}" poster='' loop autoplay controls objectFit="cover"></video>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==1}}">
+                  <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                  <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area1' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode='aspectFill'></image>
+                  </view>
+            </view>
+             <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==2}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area2' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode='aspectFill'></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==3}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area3' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==4}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area4' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==5}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area5' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==6}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area6' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==7}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area7' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==8}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area8' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class='imgbox' wx:if="{{item.type==1 && item.dongimg.length==9}}">
+                <view wx:for="{{item.dongimg}}" wx:key="index" wx:for-item="dImg">
+                    <image catchtap="previewImage" data-src="{{index}}" data-srclist="{{item.dongimg}}"  class='area9' wx:if="{{dImg}}" wx:key="index" src='{{imgurl}}{{dImg}}' mode="aspectFill"></image>
+                </view>
+            </view>
+          </view>
+
+       </view>
+      </view>
+      
+    </view>
+</view>
+<!-- 脚部 -->
+ <!-- 分享方式 -->
+<template is="share"  wx:if="{{sharescrren}}"/>
+<!-- 生成分享图片 -->
+<template is="loadimg" data="{{ewmimg}}"  wx:if="{{ewmimgshow}}"/>
+
+<!-- 授权框 -->
+<view class='shouquan_screen' wx:if="{{closeqxbox==true}}">
+  <view class="shouquan_box">
+    <view class="shouquan_content">
+      <view class='sq'>提示</view>
+      <view class='hdnr'>
+        <text>您还未登录，登录获取完整信息</text>
+      </view>
+      <view class='sqbtn'>
+        <button class='checkbtn' type="default" plain="true" open-type="getUserInfo" bindgetuserinfo="getUserInfo">一键登录</button>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 没授权情况下 -->
+<view class='login_acreen' hidden='{{!login_show}}'></view>
+<view class='login_model' hidden='{{!login_show}}'>
+<view class='login_model_title'>温馨提醒</view>
+<view class='login_model_body'>
+<view>由于很多功能需要用户授权</view> 
+<view>才能正常使用，为了给您提供</view> 
+<view>更好的服务，只需一次授权！</view> 
+</view>
+<view class='login_model_btn'>
+<button class='btn_2' bindgetuserinfo='getUserInfo' open-type="getUserInfo" catchtap='close_model'>确定</button>
+</view>
+</view> 

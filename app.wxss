@@ -1,0 +1,89 @@
+/**app.wxss**/
+  /* .body {
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background: #f7f7f7;
+  color:#333333;
+  margin-bottom: 110rpx;
+}
+
+.container{
+  display: flex;
+}
+
+.image-icon{
+  width: 20rpx; height: 10rpx;
+}   */
+
+page {
+  background: #fff;
+}
+
+
+
+.swiper {
+  display: block;
+  width: 100%;
+  height: 50vw;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.foot {
+  position: fixed;
+  width: 100%;
+  height: 94rpx;
+  background: #007A33;
+  bottom: 0;
+  box-shadow: 0 -4px 4px #eee;
+  z-index: 100;
+}
+
+.foot .icon {
+  width: 20%;
+  text-align: center;
+
+}
+
+.foot .icon view.on{
+  color: #fff;
+  opacity:1;
+}
+
+.foot .icon image {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 10rpx auto 10rpx auto;
+}
+.foot .icon view{
+  font-size: 22rpx;
+  color: #fff;
+  opacity: 0.4;
+}
+
+.foot .icon:nth-child(3) image {
+  width: 103rpx;
+  height: 98rpx;
+  margin-bottom: 12rpx;
+  margin-top: -44rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
